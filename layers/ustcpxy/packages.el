@@ -32,6 +32,7 @@
 (defconst ustcpxy-packages
   '(
     company
+    helm
     (org :location built-in)
     )
   "The list of Lisp packages required by the ustcpxy layer.
@@ -66,6 +67,14 @@ Each entry is either:
     :init
     (progn
       (setq company-show-numbers t)
+      )))
+
+(defun ustcpxy/post-init-helm ()
+  (use-package helm
+    :init
+    (progn
+      (spacemacs/set-leader-keys
+        "ff"  'helm-for-files)
       )))
 
 (defun ustcpxy/post-init-org ()
