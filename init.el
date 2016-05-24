@@ -281,6 +281,30 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  (setq frame-title-format
+        '("" " - "
+          (:eval (if (buffer-file-name)
+                     (abbreviate-file-name (buffer-file-name)) "%b"))))
+
+  (global-set-key (kbd "<f12>") 'org-agenda)
+  (global-set-key (kbd "<f9>") 'org-capture)
+  (global-set-key (kbd "<f8>") 'org-capture-finalize)
+  (global-set-key (kbd "M-<f9>") 'org-capture-refile)
+  (global-set-key (kbd "M-<f8>") 'org-capture-kill)
+
+  (setq x-select-enable-primary t)
+
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  ;; tex
+  (setq TeX-source-correlate-mode t)
+  (setq TeX-source-correlate-start-server t)
+  (setq TeX-view-program-selection
+        (quote
+         ((output-pdf "Zathura")
+          (output-dvi "xdvi")
+          (output-html "xdg-open"))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
