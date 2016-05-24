@@ -31,6 +31,7 @@
 
 (defconst ustcpxy-packages
   '(
+    company
     (org :location built-in)
     )
   "The list of Lisp packages required by the ustcpxy layer.
@@ -59,6 +60,13 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun ustcpxy/post-init-company ()
+  (use-package company
+    :init
+    (progn
+      (setq company-show-numbers t)
+      )))
 
 (defun ustcpxy/post-init-org ()
   (with-eval-after-load 'org
