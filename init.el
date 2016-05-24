@@ -40,16 +40,19 @@ values."
      helm
      auto-completion
      better-defaults
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode)
+     gtags
      emacs-lisp
-     ;; git
+     git
      ;; markdown
      org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     syntax-checking
+     version-control
      ustcpxy
      )
    ;; List of additional packages that will be installed without being
