@@ -33,7 +33,7 @@
   '(
     company
     helm
-    helm-gtags
+    ggtags
     (cc-mode :location built-in)
     (org :location built-in)
     (yang-mode :location local)
@@ -80,11 +80,11 @@ Each entry is either:
         "ff"  'helm-for-files)
       )))
 
-(defun ustcpxy/post-init-helm-gtags ()
-  (use-package helm-gtags
+(defun ustcpxy/post-init-ggtags ()
+  (use-package ggtags
     :config
-    (progn
-      (define-key helm-gtags-mode-map (kbd "M-/") 'helm-gtags-find-pattern)
+    (when (configuration-layer/package-usedp 'helm-gtags)
+      (define-key ggtags-mode-map (kbd "M-/") 'helm-gtags-find-pattern)
       )))
 
 (defun ustcpxy/post-init-cc-mode ()
