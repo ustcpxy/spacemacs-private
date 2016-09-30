@@ -36,6 +36,7 @@
     helm-gtags
     (cc-mode :location built-in)
     (org :location built-in)
+    (yang-mode :location local)
     )
   "The list of Lisp packages required by the ustcpxy layer.
 
@@ -199,5 +200,6 @@ Each entry is either:
       (setq org-refile-target-verify-function 'bh/verify-refile-target)
       )))
 
-
+(defun ustcpxy/init-yang-mode ()
+  (require 'yang-mode))
 ;;; packages.el ends here
