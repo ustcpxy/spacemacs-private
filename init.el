@@ -46,7 +46,8 @@ values."
      emacs-lisp
      git
      ;; markdown
-     org
+     (org :variables
+          org-enable-reveal-js-support t)
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -292,6 +293,8 @@ you should place your code here."
   (global-set-key (kbd "<f8>") 'org-capture-finalize)
   (global-set-key (kbd "M-<f9>") 'org-capture-refile)
   (global-set-key (kbd "M-<f8>") 'org-capture-kill)
+
+  (global-set-key (kbd "M-o") 'ff-find-other-file)
 
   (setq x-select-enable-primary t)
 
