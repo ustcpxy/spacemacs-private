@@ -37,6 +37,7 @@
     (cc-mode :location built-in)
     (org :location built-in)
     (yang-mode :location local)
+    (beancount :location local)
     )
   "The list of Lisp packages required by the ustcpxy layer.
 
@@ -202,4 +203,7 @@ Each entry is either:
 
 (defun ustcpxy/init-yang-mode ()
   (require 'yang-mode))
+
+(defun ustcpxy/init-beancount ()
+  (require 'beancount))
 ;;; packages.el ends here
