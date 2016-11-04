@@ -108,7 +108,7 @@ Each entry is either:
 
 
     (setq c-default-style "linux") ;; set style to "linux"
-    (setq c-basic-offset 2)
+    (setq c-basic-offset 4)
     (c-set-offset 'substatement-open 0) ; brackets should be at same indentation level as the statements they open
     (c-set-offset 'inline-open '+)
     (c-set-offset 'innamespace 0)
