@@ -308,6 +308,8 @@ you should place your code here."
          ((output-pdf "Zathura")
           (output-dvi "xdvi")
           (output-html "xdg-open"))))
+
+  (global-linum-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
