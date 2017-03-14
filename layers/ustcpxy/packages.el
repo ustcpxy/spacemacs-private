@@ -141,7 +141,7 @@ Each entry is either:
       (add-to-list 'org-modules 'org-habit)
 
       ;; Capture and Agenda
-      (setq org-directory "~/gtd/")
+      (setq org-directory "~/pkms/gtd/")
       (setq org-capture-templates
             (quote (("t" "Todo" entry (file+headline (concat org-directory "gtd.org") "Tasks")
                     "* TODO %?\n%U\n%i\n"
@@ -165,12 +165,12 @@ Each entry is either:
                     ("h" "Habit" entry (file (concat org-directory "gtd.org"))
                      "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n%a\n"))))
 
-      (setq org-agenda-files (quote ("~/gtd")))
+      (setq org-agenda-files (quote ("~/pkms/gtd")))
       ;; refile target
-      (setq personal-note-files (quote ("~/notebook")))
+      (setq personal-note-files (quote ("~/pkms/notes")))
       (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                        (personal-note-files :maxlevel . 9)
-                                       ("~/notebook/adva.org" :maxlevel . 9)
+                                       ("~/pkms/notes/adva.org" :maxlevel . 9)
                                        (org-agenda-files :maxlevel . 9))))
 
       ;; Use full outline paths for refile targets - we file directly with IDO
