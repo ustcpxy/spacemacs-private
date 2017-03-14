@@ -310,6 +310,7 @@ you should place your code here."
           (output-html "xdg-open"))))
 
   (global-linum-mode)
+  (setq projectile-enable-caching t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
