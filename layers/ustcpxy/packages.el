@@ -165,12 +165,13 @@ Each entry is either:
                     ("h" "Habit" entry (file (concat org-directory "gtd.org"))
                      "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n%a\n"))))
 
-      (setq org-agenda-files (quote ("~/pkms/gtd")))
+      (setq org-agenda-files (quote ("~/pkms/gtd"
+                                     "~/pkms/adva"
+                                     )))
       ;; refile target
       (setq personal-note-files (quote ("~/pkms/notes")))
       (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                        (personal-note-files :maxlevel . 9)
-                                       ("~/pkms/notes/adva.org" :maxlevel . 9)
                                        (org-agenda-files :maxlevel . 9))))
 
       ;; Use full outline paths for refile targets - we file directly with IDO
