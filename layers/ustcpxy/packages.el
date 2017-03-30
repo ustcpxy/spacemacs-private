@@ -163,7 +163,7 @@ Each entry is either:
                      "* %?"
                      :empty-lines 1)
                     ("h" "Habit" entry (file (concat org-directory "gtd.org"))
-                     "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n%a\n"))))
+                     "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n"))))
 
       (setq org-agenda-files (quote ("~/pkms/gtd"
                                      "~/pkms/adva"
@@ -200,6 +200,11 @@ Each entry is either:
         (not (member (nth 2 (org-heading-components)) org-done-keywords)))
 
       (setq org-refile-target-verify-function 'bh/verify-refile-target)
+
+      ;; MobileOrg
+      (setq org-mobile-directory "~/mobile-org")
+      (setq org-mobile-files (quote ("~/pkms/gtd")))
+      (setq org-mobile-inbox-for-pull "~/mobile-org/inbox.org")
       )))
 
 (defun ustcpxy/init-yang-mode ()
