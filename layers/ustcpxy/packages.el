@@ -168,6 +168,10 @@ Each entry is either:
       (setq org-agenda-files (quote ("~/pkms/gtd"
                                      "~/pkms/adva"
                                      )))
+      ;; Remove DONE tasks from agenda view
+      ;; http://stackoverflow.com/questions/8281604/remove-done-tasks-from-agenda-view
+      (setq org-agenda-skip-scheduled-if-done t)
+
       ;; refile target
       (setq personal-note-files (quote ("~/pkms/notes")))
       (setq org-refile-targets (quote ((nil :maxlevel . 9)
