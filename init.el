@@ -353,6 +353,15 @@ you should place your code here."
           (output-html "xdg-open"))))
 
   (setq projectile-enable-caching t)
+
+  (require 'epa-file)
+  (setq epa-file-select-keys 0)
+  ;; 总是使用对称加密
+  (setq epa-file-encrypt-to nil)
+  ;; 允许缓存密码，否则编辑时每次保存都要输入密码
+  (setq epa-file-cache-passphrase-for-symmetric-encryption t)
+  ;; 允许自动保存
+  (setq epa-file-inhibit-auto-save nil) 
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
