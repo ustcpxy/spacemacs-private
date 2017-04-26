@@ -208,7 +208,7 @@ Each entry is either:
       ;; MobileOrg
       (setq org-mobile-directory "~/mobile-org")
       (setq org-mobile-files (quote ("~/pkms/gtd")))
-      (setq org-mobile-inbox-for-pull "~/mobile-org/inbox.org")
+      (setq org-mobile-inbox-for-pull "~/pkms/gtd/from-mobile.org")
 
       ;; 加密文章
       ;; "http://coldnew.github.io/blog/2013/07/13_5b094.html"
