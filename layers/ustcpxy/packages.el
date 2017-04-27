@@ -143,13 +143,19 @@ Each entry is either:
       ;; Capture and Agenda
       (setq org-directory "~/pkms/gtd/")
       (setq org-capture-templates
-            (quote (("t" "Todo" entry (file+headline (concat org-directory "gtd.org") "Tasks")
+            (quote (("t" "Tasks" entry (file+headline (concat org-directory "tasks.org") "Tasks")
                     "* TODO %?\n%U\n%i\n"
                     :empty-lines 1)
-                    ("n" "Notes" entry (file+headline org-default-notes-file "Quick notes")
+                    ("n" "New" entry (file (concat org-directory "inbox.org"))
+                     "* %?\n %U"
+                     )
+                    ("r" "Notes" entry (file org-default-notes-file)
                      "* %?\n  %i\n %U"
                      :empty-lines 1)
-                    ("b" "Blog Ideas" entry (file+headline org-default-notes-file "Blog Ideas")
+                    ("c" "Calendar" entry (file+headline (concat org-directory "tasks.org") "Tasks")
+                     "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CREATED: %U\n:END:\n"
+                     :empty-lines 1)
+                    ("i" "Ideas" entry (file+headline (concat org-directory "tasks.org") "Ideas")
                      "* TODO %?\n  %i\n %U"
                      :empty-lines 1)
                     ("s" "Code Snippet" entry (file (concat org-directory "snippets.org"))
@@ -161,6 +167,9 @@ Each entry is either:
                      "* TODO Review %c\n%U\n" :immediate-finish t)
                     ("j" "Journal Entry" entry (file+datetree (concat org-directory "journal.org"))
                      "* %?"
+                     :empty-lines 1)
+                    ("p" "Project" entry (file (concat org-directory "project.org"))
+                     "* %^{prompt} %^g\n %<%Y-%m-%d> %U\n %i\n %?"
                      :empty-lines 1)
                     ("h" "Habit" entry (file (concat org-directory "gtd.org"))
                      "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n"))))
