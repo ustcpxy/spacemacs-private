@@ -146,17 +146,14 @@ Each entry is either:
             (quote (("t" "Tasks" entry (file+headline (concat org-directory "tasks.org") "Tasks")
                     "* TODO %?\n%U\n%i\n"
                     :empty-lines 1)
-                    ("n" "New" entry (file (concat org-directory "inbox.org"))
-                     "* %?\n %U"
-                     )
-                    ("r" "Notes" entry (file org-default-notes-file)
-                     "* %?\n  %i\n %U"
+                    ("n" "Notes" entry (file org-default-notes-file)
+                     "* %?\n%U\n\n%i\n"
                      :empty-lines 1)
                     ("c" "Calendar" entry (file+headline (concat org-directory "tasks.org") "Tasks")
                      "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CREATED: %U\n:END:\n"
                      :empty-lines 1)
-                    ("i" "Ideas" entry (file+headline (concat org-directory "tasks.org") "Ideas")
-                     "* TODO %?\n  %i\n %U"
+                    ("i" "Inbox" entry (file (concat org-directory "inbox.org"))
+                     "* %?\n  %U\n\n%i\n"
                      :empty-lines 1)
                     ("s" "Code Snippet" entry (file (concat org-directory "snippets.org"))
                      "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
@@ -169,13 +166,14 @@ Each entry is either:
                      "* %?"
                      :empty-lines 1)
                     ("p" "Project" entry (file (concat org-directory "project.org"))
-                     "* %^{prompt} %^g\n %<%Y-%m-%d> %U\n %i\n %?"
+                     "* %^{prompt} %^g\n %U\n %i\n %?"
                      :empty-lines 1)
                     ("h" "Habit" entry (file (concat org-directory "gtd.org"))
                      "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n"))))
 
       (setq org-agenda-files (quote ("~/pkms/gtd"
                                      "~/pkms/adva"
+                                     "~/pkms/notebook"
                                      )))
       ;; Remove DONE tasks from agenda view
       ;; http://stackoverflow.com/questions/8281604/remove-done-tasks-from-agenda-view
