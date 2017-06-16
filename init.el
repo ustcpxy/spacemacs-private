@@ -379,6 +379,8 @@ before packages are loaded."
   (setq epa-file-cache-passphrase-for-symmetric-encryption t)
   ;; 允许自动保存
   (setq epa-file-inhibit-auto-save nil) 
+
+  (setq org-confirm-babel-evaluate nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
