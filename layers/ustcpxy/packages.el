@@ -144,9 +144,9 @@ Each entry is either:
       (setq org-directory "~/pkms/gtd/")
       (setq org-capture-templates
             (quote (("t" "Tasks" entry (file+headline (concat org-directory "tasks.org") "Tasks")
-                    "* TODO %?\n%U\n%i\n"
+                    "* TODO %?\n%i\n"
                     :empty-lines 1)
-                    ("n" "Notes" entry (file org-default-notes-file)
+                    ("n" "Notes" entry (file (concat org-directory "notes.org"))
                      "* %?\n%U\n\n%i\n"
                      :empty-lines 1)
                     ("c" "Calendar" entry (file+headline (concat org-directory "tasks.org") "Tasks")
