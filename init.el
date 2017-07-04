@@ -30,6 +30,7 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     lua
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -363,6 +364,11 @@ before packages are loaded."
   (setq x-select-enable-primary t)
 
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+  (setq frame-title-format
+        '("" " - "
+          (:eval (if (buffer-file-name)
+                     (abbreviate-file-name (buffer-file-name)) "%b"))))
 
   ;; tex
   (setq TeX-source-correlate-mode t)
